@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Chatbot</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="brand-block">
+          <div class="brand-mark">AI</div>
+          <div>
+            <p class="eyebrow">assistant</p>
+            <h1>Chatbot</h1>
+          </div>
+        </div>
+
+        <button id="newChatBtn" class="secondary-btn" type="button">
+          + New chat
+        </button>
+
+        <div class="settings-block">
+          <label class="field-label" for="modelSelect">Model</label>
+          <select id="modelSelect">
+            <option value="gpt-4o-mini">GPT-4o Mini</option>
+            <option value="gpt-4o">GPT-4o</option>
+            <option value="gpt-3.5-turbo">GPT-3.5 Turbo</option>
+          </select>
+        </div>
+
+        <div class="settings-block">
+          <label class="field-label" for="apiKeyInput">OpenAI API key</label>
+          <input
+            id="apiKeyInput"
+            type="password"
+            placeholder="sk-..."
+            autocomplete="off"
+          />
+          <small>Leave empty to use offline demo replies.</small>
+        </div>
+      </aside>
+
+      <main class="chat-panel">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">online</p>
+            <h2>Ask anything</h2>
+          </div>
+          <button id="clearMessagesBtn" class="ghost-btn" type="button">
+            Clear
+          </button>
+        </header>
+
+        <section
+          id="chatMessages"
+          class="messages"
+          aria-live="polite"
+        ></section>
+
+        <form id="chatForm" class="composer">
+          <textarea
+            id="messageInput"
+            rows="1"
+            placeholder="Type your message..."
+            aria-label="Type your message"
+          ></textarea>
+          <button id="sendBtn" type="submit">Send</button>
+        </form>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
